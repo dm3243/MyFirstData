@@ -4,23 +4,22 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<style>
-			.ArticleTitle{
-				font-style:bold;
-				font-size:24px;
+			.ArticleTitle {
+				font-style: bold;
+				font-size: 24px;
 				color: #FF0000;
 				font-family: "Georgia"
 			}
-			
-			.imgDiv{
+
+			.imgDiv {
 				width: 100%;
-				border: solid  
-				color: #000000;
+				border: solid color : #000000;
 			}
-			a{
+			a {
 				text-decoration: none;
 				color: #FF0000;
 			}
-			img{
+			img {
 				width: 100%
 			}
 		</style>
@@ -29,32 +28,104 @@
 	<body>
 		<div>
 			<div class="ArticleTitle">
-				<a href="https://www.nytimes.com/interactive/2015/09/15/world/europe/migrant-borders-europe.html?_r=0">
-					Closing the Back Door to Europe	
-				</a> 
+				<a href="https://www.nytimes.com/interactive/2015/09/15/world/europe/migrant-borders-europe.html?_r=0"> Closing the Back Door to Europe </a>
 			</div>
-			<div style="width: 500px; border: solid 2px #FF0000;">>
-				<img src="https://static01.nyt.com/newsgraphics/2015/09/14/migrants-borders/a127a650a0ea71d80095e5de196dc181e238e753/top_map-700.jpg"/>
+			<div style="width: 500px; border: solid 2px #FF0000;">
+				> <img src="https://static01.nyt.com/newsgraphics/2015/09/14/migrants-borders/a127a650a0ea71d80095e5de196dc181e238e753/top_map-700.jpg"/>
 			</div>
-			<div class="ArticleTitle"> This is the stuff we've been working on in inserting images</div>
+			<div class="ArticleTitle">
+				This is the stuff we've been working on in inserting images
+			</div>
 		</div>
 		<script>
-		/*Following is my array to list the sources of the articles used in the last hw*/	
+			/*Following is my array to list the sources of the articles used in the last hw*/
 			var Article_sources = ["News Deeply", "News Deeply", "New York Times", "News Deeply", "Room for one more"];
-		/*Following is my number to show how many articles were added in the last hw*/
+			/*Following is my number to show how many articles were added in the last hw*/
 			var tot_articles = 4;
-		/*Following is my string, which is the name of the NYTimes article I used in the last hw*/	
+			/*Following is my string, which is the name of the NYTimes article I used in the last hw*/
 			var NYTimes_Title = "For Stranded Somali Refugees, Friend of America’ Is a Deadly Label";
-		/*Following is my object variable, which includes an array, string, and an object, and number*/	
+			/*Following is my object variable, which includes an array, string, and an object, and number*/
 			var Articles = {
-				"About_NYTimes_Article": "This is a profile on Ismail Ali Ibrahim to depict the effects of a Trump ban on Somali refugees.", 
-				"Title_NYTimes_Article": "For Stranded Somali Refugees, Friend of America’ Is a Deadly Label",
-				"Other_Article_Titles": ["Peer Pressure Drives Somalis to Risk Europe Odyssey", "Somali Refugees Decry Empty Promises on Return From Dadaab", "An Intimate Look at the Global Refugee Crisis"], 
-				"My_fav_News_Deeply_article": {"title": "Peer Pressure Drives Somalis to Risk Europe Odyssey"}
-				};
-		/*Following is my boolean variable*/	
+				"About_NYTimes_Article" : "This is a profile on Ismail Ali Ibrahim to depict the effects of a Trump ban on Somali refugees.",
+				"Title_NYTimes_Article" : "For Stranded Somali Refugees, Friend of America’ Is a Deadly Label",
+				"Other_Article_Titles" : ["Peer Pressure Drives Somalis to Risk Europe Odyssey", "Somali Refugees Decry Empty Promises on Return From Dadaab", "An Intimate Look at the Global Refugee Crisis"],
+				"My_fav_News_Deeply_article" : {
+					"title" : "Peer Pressure Drives Somalis to Risk Europe Odyssey"
+				}
+			};
+			/*Following is my boolean variable*/
 			var my_boolean_for_articles = true;
-		/*Following is the using the console.log function to print one element from my array and one attribute in my object*/	
+			/*Following is a list of objects*/
+			var my_articles = [{
+
+				"title" : "Peer Pressure Drives Somalis to Risk Europe Odyssey",
+
+				"source" : "News Deeply",
+
+				"url" : "https://www.newsdeeply.com/refugees/articles/2016/11/11/peer-pressure-drives-somalis-to-risk-europe-odyssey",
+
+				"image" : "https://newsdeeply.imgix.net/20161111125236/Fishermen-in-Berbera-Somaliland.jpg?w=640&fit=max&q=60",
+
+				"summary" : "Peer pressure is put on Somali youth to migrate to Western regions. Tahriib is the popular word used from Arabic by Somalis to mean the journey to the West. And, social media puts even more pressure on youth as migrant friends post pictures and videos of success in making the journey. Those social media footprints lead other Somali youths to follow optimistically thinking there is a guarantee to a better life in the West."
+
+			}, {
+
+				"title" : "Somali Refugees Decry Empty Promises on Return From Dadaab",
+
+				"source" : "News Deeply",
+
+				"url" : "https://www.newsdeeply.com/refugees/articles/2016/10/11/somali-refugees-decry-empty-promises-on-return-from-dabaab",
+
+				"image" : "https://newsdeeply.imgix.net/20161011063028/IMG_3932.jpg?w=640&fit=max&q=60",
+
+				"summary" : "Summary here."
+
+			}, {
+
+				"title" : "For Stranded Somali Refugees, 'Friend of America' Is a Deadly Label",
+
+				"source" : "NYTimes",
+
+				"url" : "https://www.nytimes.com/2017/02/02/world/africa/trump-refugee-ban-somalia.html?_r=0",
+
+				"image" : "https://static01.nyt.com/images/2017/02/02/world/03Somalis-sub/02Somalis-sub-master768.jpg",
+
+				"summary" : "Summary here."
+
+			}, {
+
+				"title" : "An Intimate Look at the Global Refugee Crisis",
+
+				"source" : "News Deeply",
+
+				"url" : "https://www.newsdeeply.com/refugees/community/2016/06/20/an-intimate-look-at-the-global-refugee-crisis",
+
+				"image" : "https://newsdeeply.imgix.net/20160620103724/04_19DAYS.jpg?w=640&fit=max&q=60",
+
+				"summary" : "Summary here."
+
+			}];
+			/*Goal: go through my list of articles and console.log only the ones that came from the new york times.
+			 * If it's not from NYTimes, console.log "Not NYTimes"
+			 *
+			 *
+			 */
+
+			/*To go through the list, create a loop*/
+			for (var counter = 0; counter < my_articles.length; counter++) {
+				/*everything that I want to do to each item, must be between these brackets*/
+
+				var currentArticle = my_articles[counter];
+
+				if (currentArticle.source == "NYTimes")
+
+					console.log(currentArticle);
+				
+				else {
+					console.log("Not NYTimes")
+				}
+			}
+			/*Following is the using the console.log function to print one element from my array and one attribute in my object*/
 			console.log(Article_sources[1]);
 			console.log(Articles["About_NYTimes_Article"]);
 		</script>
