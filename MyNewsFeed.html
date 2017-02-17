@@ -56,7 +56,7 @@
 			/*Following is my boolean variable*/
 			var my_boolean_for_articles = true;
 			/*Following is a list of objects*/
-			var my_articles = [{
+			var my_research_project_articles = [{
 
 				"title" : "Peer Pressure Drives Somalis to Risk Europe Odyssey",
 
@@ -78,7 +78,7 @@
 
 				"image" : "https://newsdeeply.imgix.net/20161011063028/IMG_3932.jpg?w=640&fit=max&q=60",
 
-				"summary" : "Summary here."
+				"summary" : "Somalis who were displaced to Kenya are returning to Somalia under voluntary repatriation, but are disappointed with what they find. Apparently, Somalia suffers from limited access to supplies and food making repatriation is a difficult road ahead despite promises of peace from UNHCR. Kenya also announced that it would be closing Dadaab camp by the end of 2016 and sending Somalis back home, which has complicated matters further."
 
 			}, {
 
@@ -90,7 +90,7 @@
 
 				"image" : "https://static01.nyt.com/images/2017/02/02/world/03Somalis-sub/02Somalis-sub-master768.jpg",
 
-				"summary" : "Summary here."
+				"summary" : "This is a profile on Ismail Ali Ibrahim to depict the effects of a Trump ban on Somali refugees. With optimism and hope of finding a better life in the West, Somali refugees will leave almost everything behind to make the journey. And, the ban has left refugees who were prepared to make Tahriib vulnerable to extremist groups suspicious of their motives for migrating to the U.S. Al Shabab, which has an influence around camps suspects migrants of providing intelligence information to authorities in the West. This puts lives at risk, which has amplified after the Trump ban leaving many Somalis grounded and surrounded by danger."
 
 			}, {
 
@@ -102,30 +102,33 @@
 
 				"image" : "https://newsdeeply.imgix.net/20160620103724/04_19DAYS.jpg?w=640&fit=max&q=60",
 
-				"summary" : "Summary here."
+				"summary" : "This piece looks at the resettlement that takes place in Canada when refugees first arrive. It opens with a scene that takes place in a resettlement center, which is usually the starting point for migrants from Somalia coming to Canada. And, the scene carries through to explain the significance of resettlement centers to the refugees who arrive, and is seen as their first home in a region that they will soon learn to call home whether temporarily or permanently. The resettlement centers serve at a learning facility on how to assimilate into a Canadian way of life for people coming for the first time."
 
 			}];
 			/*Goal: go through my list of articles and console.log only the ones that came from the new york times.
 			 * If it's not from NYTimes, console.log "Not NYTimes"
 			 *
-			 *
+			 * 
+			 *Replicating the steps taken above in creating a list of objects and a for loop
+			 *Including a conditional statement too  
 			 */
 
-			/*To go through the list, create a loop*/
-			for (var counter = 0; counter < my_articles.length; counter++) {
-				/*everything that I want to do to each item, must be between these brackets*/
-
-				var currentArticle = my_articles[counter];
-
+			/*To go through the list of articles looking for ones published by NYTimes, I'll create a loop*/
+			for (var counter = 0; counter < my_research_project_articles.length; counter++) {
+				/*everything that I want to do to each item, must be between these brackets
+				 * 
+				 * Following, I'll form a variable called currentArticle that will play the role of a counter in my for loop*/
+				var currentArticle = my_research_project_articles[counter];
+			/*creating the 'if statement' that is meant to use the loop for specifically searching for NYTimes articles*/
 				if (currentArticle.source == "NYTimes")
-
+			/*printing the results of currentArticle in the console*/
 					console.log(currentArticle);
-				
+			/*printing the statement */	
 				else {
 					console.log("Not NYTimes")
 				}
 			}
-			/*Following is the using the console.log function to print one element from my array and one attribute in my object*/
+			/*Following is the using the console.log function to print one element from my array and one attribute in my object.*/
 			console.log(Article_sources[1]);
 			console.log(Articles["About_NYTimes_Article"]);
 		</script>
