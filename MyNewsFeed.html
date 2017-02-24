@@ -36,18 +36,18 @@
         /*Add a column of type string, labeled "Topping"*/
         data_container.addColumn('string', 'Topping');
         /*Add a column of type number, labeled "Slices"*/
-        data_container.addColumn('number', 'Slices');
+        data_container.addColumn('number', 'People');
         /*My rows must be a list of lists, with each item in the list
          * having the same number of elements as I have columns
          * AND with the data types matching those that were declared
          * in my "addColumn" function calls.
          */
         data_container.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+          ['Somalis', 1405],
+          ['Syrians', 20],
+          ['Iranis', 11],
+          ['Iraqis', 167],
+          ['Sudanis', 12]
         ]);
 
         /*Options object includes some customization; 
@@ -55,7 +55,7 @@
          * make visualizations we might actually want to publish.
          */
         
-        var options = {'title':'How Much Pizza I Ate Last Night',
+        var options = {'title':'Population Breakdown of Refugees in Minnesota by Country of Origin',
                        'width':500,
                        'height':300};
 
