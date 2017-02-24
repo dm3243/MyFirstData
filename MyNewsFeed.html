@@ -17,11 +17,11 @@
     
     <script type="text/javascript">
 
-      // Load the Visualization API and the corechart package.
+      // Here I am trying out a new commenting style
+      // I am also loading the Visualization API and the corechart package
       google.charts.load('current', {'packages':['corechart']});
 
-      /*When google calls back with the contents of the "corechart" package
-       * execute the "drawChart" function
+      /*When google calls back with the contents of the "corechart" package execute the "drawChart" function
        */
       google.charts.setOnLoadCallback(drawChart);
 
@@ -32,17 +32,17 @@
       function drawChart() {
 
         // Call on the DataTable recipe to make a new DataTable type
-        var data_container = new google.visualization.DataTable();
-        /*Add a column of type string, labeled "Topping"*/
-        data_container.addColumn('string', 'Topping');
-        /*Add a column of type number, labeled "Slices"*/
-        data_container.addColumn('number', 'People');
+        var chart_holder = new google.visualization.DataTable();
+        /*Add a column of type string, labeled "People Origin"*/
+        chart_holder.addColumn('string', 'People Origin');
+        /*Add a column of type number, labeled "People"*/
+        chart_holder.addColumn('number', 'People');
         /*My rows must be a list of lists, with each item in the list
          * having the same number of elements as I have columns
          * AND with the data types matching those that were declared
          * in my "addColumn" function calls.
          */
-        data_container.addRows([
+        chart_holder.addRows([
           ['Somalis', 1405],
           ['Syrians', 20],
           ['Iranis', 11],
@@ -55,7 +55,7 @@
          * make visualizations we might actually want to publish.
          */
         
-        var options = {'title':'Population Breakdown of Refugees in Minnesota by Country of Origin',
+        var customization = {'title':'Population Breakdown of Refugees in Minnesota by Country of Origin',
                        'width':500,
                        'height':300};
 
@@ -66,7 +66,7 @@
         
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_holder'));
         
-        chart.draw(data_container, options);
+        chart.draw(chart_holder, customization);
       }
      </script>
 		
