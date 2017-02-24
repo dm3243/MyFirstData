@@ -18,29 +18,27 @@
     <script type="text/javascript">
 
       // Here I am trying out a new commenting style
-      // I am also loading the Visualization API and the corechart package
+      // And, I am loading the Visualization API and the corechart package from it.
       google.charts.load('current', {'packages':['corechart']});
 
       /*When google calls back with the contents of the "corechart" package execute the "drawChart" function
+       * Keeping the comment above the way it is b/c it is easy to understand ^^ for reference
        */
       google.charts.setOnLoadCallback(drawChart);
 
       /*This is the drawChart function
-       * It doesn't need any extra ingredients
        * It draws a chart on the page
        */
       function drawChart() {
 
-        // Call on the DataTable recipe to make a new DataTable type
+        // Call on the DataTable (is it a package?) to  to make a new DataTable type
         var chart_holder = new google.visualization.DataTable();
         /*Add a column of type string, labeled "People Origin"*/
         chart_holder.addColumn('string', 'People Origin');
         /*Add a column of type number, labeled "People"*/
         chart_holder.addColumn('number', 'People');
-        /*My rows must be a list of lists, with each item in the list
-         * having the same number of elements as I have columns
-         * AND with the data types matching those that were declared
-         * in my "addColumn" function calls.
+        /*My rows must be an array of arrays, or in other words: a list of lists, where each item in the list has the same number of elements as I have columns
+         * Also, the data types should match those that I were declared in my "addColumn" function (I can't change funciton names, can I?) calls.
          */
         chart_holder.addRows([
           ['Somalis', 1405],
@@ -50,22 +48,20 @@
           ['Sudanis', 12]
         ]);
 
-        /*Options object includes some customization; 
-         * We will need to add to this extensively to
-         * make visualizations we might actually want to publish.
+        /*The customization variable is an object, which includes some customization applied to the graphic; 
+         * We will need to add to this extensively to make visualizations we actually want to publish.
+         * We can add or subtract from here depending on how we want the chart to be rendered, e.g. width, height
          */
-        
         var customization = {'title':'Population Breakdown of Refugees in Minnesota by Country of Origin',
                        'width':500,
                        'height':300};
 
-        /*Creating a variable, in which I am storing the results 
-         * of calling the "PieChart" function. 
-         * I must pass that function the id of a div that exists on the HTML page
+        /*Creating a variable: "Chart", in which I am storing the results of calling the bar chart. 
+         * I must apply the 'chart_holder' variable as a unique ID in order to get the chart when called in the id of a DIV later.
          */
-        
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_holder'));
         
+        /*setting the parameters on the chart.draw, taking from the chart_holder variable and the customization varible too.*/
         chart.draw(chart_holder, customization);
       }
      </script>
@@ -74,7 +70,7 @@
 	<body>
 		
 <!-- 
-		This is where I want my google viz to appear.
+		This is where my bar chart will appear.
 		-->
 		<div id="chart_holder"></div>
 		
