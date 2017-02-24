@@ -16,3 +16,8 @@ a {
 img {
 	width: 100%
 }
+#chart_holder{
+	width: 500px;
+	height: 300px;
+	background-color: #eeeeee;
+}
