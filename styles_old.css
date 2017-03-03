@@ -11,15 +11,17 @@ div {
 	color: #3182bd;
 	font-family: "Georgia"
 }
+/*These are parameters for all anchor tags*/
 a {
 	text-decoration: none;
 	color: #FF0000;
 }
-/*All image tags use these parameters*/
+/*These are parameters for all image tags*/
 img {
 	width: 500px;
 	border: solid 1px #FF0000;
 }
+/*This is a placeholder for my chart*/
 #HolderOfTheChart{
 	width: 500px;
 	height: 300px;
