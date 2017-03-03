@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-		<title>My Refugee Story Collection</title>
+		<h3>My Refugee Story Collection</h3>
 		<!-- Reference for including a CSS stylesheet
 		https://www.w3schools.com/html/html_css.asp
 		-->
@@ -29,79 +29,79 @@
 			/*When google calls back with the contents of the "corechart" package execute the "drawChart" function
 			 * Keeping the comment above the way it is b/c it is easy to understand ^^ for reference
 			 */
-			google.charts.setOnLoadCallback(drawALLCharts);
+			google.charts.setOnLoadCallback(DrawMyCharts);
 
 			/*This is the drawChart function
 			 * It draws a chart on the page
 			 */
-			function drawALLCharts() {
-				drawChart1();
-				drawChart2();
+			function DrawMyCharts() {
+				DrawFirstChart();
+				DrawSecondChart();
 			}
 
-			function drawChart1() {
+			function DrawFirstChart() {
 				// Call on the DataTable (is it a package?) to  to make a new DataTable type
-				var chart_holder = new google.visualization.DataTable();
+				var HolderOfCharts = new google.visualization.DataTable();
 				/*Add a column of type string, labeled "People Origin"*/
-				chart_holder.addColumn('string', 'People Origin');
-				/*Add a column of type number, labeled "People"*/
-				chart_holder.addColumn('number', 'People');
+				HolderOfCharts.addColumn('string', 'People Origin');
+				/*Add a column of type number, labeled "Refugees"*/
+				HolderOfCharts.addColumn('number', 'Refugees');
 				/*My rows must be an array of arrays, or in other words: a list of lists, where each item in the list has the same number of elements as I have columns
-				 * Also, the data types should match those that I were declared in my "addColumn" function (I can't change funciton names, can I?) calls.
+				 * Also, the data types should match those that I were declared in my "addColumn" function calls.
 				 */
-				chart_holder.addRows([['Somalis', 1405], ['Syrians', 20], ['Iranis', 11], ['Iraqis', 167], ['Sudanis', 12]]);
+				HolderOfCharts.addRows([['Somali', 1405], ['Burmese', 658], ['Ethiopian', 277], ['Iraqi', 167], ['Bhutanese', 126]]);
 
 				/*The customization variable is an object, which includes some customization applied to the graphic;
 				 * We will need to add to this extensively to make visualizations we actually want to publish.
 				 * We can add or subtract from here depending on how we want the chart to be rendered, e.g. width, height
 				 */
 				var customization = {
-					'title' : 'Population Breakdown of Refugees in Minnesota by Country of Origin',
-					'width' : 500,
+					'title' : 'Largest Refugee Populations in Minnesota Represented by Country of Origin',
+					'width' : 550,
 					'height' : 300
 				};
 
-				/*Creating a variable: "Chart", in which I am storing the results of calling the bar chart.
-				 * I must apply the 'chart_holder' variable as a unique ID in order to get the chart when called in the id of a DIV later.
+				/*Creating a variable: "StoreChartResults", in which I am storing the results of calling the bar chart.
+				 * I must apply the 'HolderOfCharts' variable as a unique ID in order to get the chart when called in the id of a DIV later.
 				 */
-				var chart = new google.visualization.ColumnChart(document.getElementById('chart_holder'));
+				var StoreChartResults = new google.visualization.ColumnChart(document.getElementById('HolderOfCharts'));
 
-				/*setting the parameters on the chart.draw, taking from the chart_holder variable and the customization varible too.*/
-				chart.draw(chart_holder, customization);
+				/*setting the parameters on the StoreChartResults.draw, taking from the HolderOfCharts variable and the customization varible too.*/
+				StoreChartResults.draw(HolderOfCharts, customization);
 			}
 
 			/*Introduce second draw chart function.*/
 
-			function drawChart2() {
+			function DrawSecondChart() {
 
 				// Call on the DataTable (is it a package?) to  to make a new DataTable type
-				var chart_holder = new google.visualization.DataTable();
+				var SecondHolderOfCharts = new google.visualization.DataTable();
 				/*Add a column of type string, labeled "People Origin"*/
-				chart_holder.addColumn('string', 'People Origin');
+				SecondHolderOfCharts.addColumn('string', 'People Origin');
 				/*Add a column of type number, labeled "People"*/
-				chart_holder.addColumn('number', 'People');
+				SecondHolderOfCharts.addColumn('number', 'Refugees');
 				/*My rows must be an array of arrays, or in other words: a list of lists, where each item in the list has the same number of elements as I have columns
 				 * Also, the data types should match those that I were declared in my "addColumn" function (I can't change funciton names, can I?) calls.
 				 */
-				chart_holder.addRows([['Somalis', 1405], ['Syrians', 20], ['Iranis', 11], ['Iraqis', 167], ['Sudanis', 12]]);
+				SecondHolderOfCharts.addRows([['Somali', 1405], ['Iraqi', 167], ['Syrian', 20], ['Sudani', 12], ['Irani', 11]]);
 
 				/*The customization variable is an object, which includes some customization applied to the graphic;
 				 * We will need to add to this extensively to make visualizations we actually want to publish.
 				 * We can add or subtract from here depending on how we want the chart to be rendered, e.g. width, height
 				 */
 				var customization = {
-					'title' : 'Population Breakdown of Refugees in Minnesota by Country of Origin',
+					'title' : 'Countries on the Muslim Ban Represented in Minnesota Population Breakdown of Refugees',
 					'width' : 500,
 					'height' : 300
 				};
 
-				/*Creating a variable: "Chart", in which I am storing the results of calling the bar chart.
-				 * I must apply the 'chart_holder' variable as a unique ID in order to get the chart when called in the id of a DIV later.
+				/*Creating a variable: "StoreChartResults2", in which I am storing the results of calling the bar chart.
+				 * I must apply the 'SecondHolderOfCharts' variable as a unique ID in order to get the chart when called in the id of a DIV later.
 				 */
-				var chart = new google.visualization.ColumnChart(document.getElementById('chart_holder1'));
+				var StoreChartResults2 = new google.visualization.ColumnChart(document.getElementById('SecondHolderOfCharts1'));
 
-				/*setting the parameters on the chart.draw, taking from the chart_holder variable and the customization varible too.*/
-				chart.draw(chart_holder, customization);
+				/*setting the parameters on the StoreChartResults2.draw, taking from the SecondHolderOfCharts variable and the customization varible too.*/
+				StoreChartResults2.draw(SecondHolderOfCharts, customization);
 			}
 		</script>
 
@@ -114,13 +114,13 @@
 					<!--
 					This is where my bar chart will appear.
 					-->
-					<div id="chart_holder"></div>
+					<div id="HolderOfCharts"></div>
 				</div>
 				<div class="col-md-6">
 					<!--
 					This is where my second chart will appear.
 					-->
-					<div id="chart_holder1"></div>
+					<div id="SecondHolderOfCharts1"></div>
 				</div>
 			</div>
 
@@ -129,10 +129,10 @@
 					<a href="https://www.nytimes.com/interactive/2015/09/15/world/europe/migrant-borders-europe.html?_r=0"> Closing the Back Door to Europe </a>
 				</div>
 				<div>
-					> <img src="https://static01.nyt.com/newsgraphics/2015/09/14/migrants-borders/a127a650a0ea71d80095e5de196dc181e238e753/top_map-700.jpg"/>
+					<img src="https://static01.nyt.com/newsgraphics/2015/09/14/migrants-borders/a127a650a0ea71d80095e5de196dc181e238e753/top_map-700.jpg"/>
 				</div>
-				<div class="ArticleTitle">
-					This is the stuff we've been working on in inserting images
+				<div>
+					The refugee route into Europe through the Balkans
 				</div>
 			</div>
 			<script type="text/javascript" src="scripts.js"></script>
