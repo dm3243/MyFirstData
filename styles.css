@@ -1,31 +1,38 @@
+/*This is a class that can be applied to divs*/
 .ArticleTitle {
 	font-weight: bold;
 	font-size: 24px;
 	color: #FF0000;
 	font-family: "Georgia";
 }
+/*All div tags use these parameters*/
 div {
 	font-size: 16px;
 	color: #3182bd;
 	font-family: "Georgia"
 }
+/*All h3 title tags use these parameters*/
 h3 {
 	color: #3182bd
 }
+/*All anchor tags use these parameters*/
 a {
 	text-decoration: none;
 	color: #FF0000;
 }
+/*All image tags use these parameters*/
 img {
 	width: 500px;
 	border: solid 1px #FF0000;
 }
+/*This is adding a placeholder for first chart*/
 #HolderOfCharts{
 	width: 500px;
 	height: 300px;
 	background-color: #eeeeee;
 }
-#SecondHolderOfCharts{
+/*This is for adding a placeholder to second chart*/
+#SecondHolderOfCharts1{
 	width: 500px;
 	height: 300px;
 	background-color: #eeeeee;
