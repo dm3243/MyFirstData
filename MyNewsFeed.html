@@ -14,7 +14,7 @@
 		<!-- Load the JavaScript code from the Google Visualizations Library
 		-->
 
-		<!-- Latest compiled and minified CSS -->
+		<!-- This is applying bootstrap. Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -31,16 +31,16 @@
 			 */
 			google.charts.setOnLoadCallback(DrawMyCharts);
 
-			/*This is the drawChart function
-			 * It draws a chart on the page
+			/*This is a function to draw all my charts on the page
 			 */
 			function DrawMyCharts() {
 				DrawFirstChart();
 				DrawSecondChart();
 			}
-
+			
+			/*This is the first function to draw my first chart*/
 			function DrawFirstChart() {
-				// Call on the DataTable (is it a package?) to  to make a new DataTable type
+				// Call on the DataTable to make a new DataTable type
 				var HolderOfCharts = new google.visualization.DataTable();
 				/*Add a column of type string, labeled "People Origin"*/
 				HolderOfCharts.addColumn('string', 'People Origin');
@@ -70,23 +70,21 @@
 				StoreChartResults.draw(HolderOfCharts, customization);
 			}
 
-			/*Introduce second draw chart function.*/
-
+			/*This is the function to draw my second chart.*/
 			function DrawSecondChart() {
 
-				// Call on the DataTable (is it a package?) to  to make a new DataTable type
+				// Calling on DataTable for the chart to store results
 				var SecondHolderOfCharts = new google.visualization.DataTable();
 				/*Add a column of type string, labeled "People Origin"*/
 				SecondHolderOfCharts.addColumn('string', 'People Origin');
 				/*Add a column of type number, labeled "People"*/
 				SecondHolderOfCharts.addColumn('number', 'Refugees');
 				/*My rows must be an array of arrays, or in other words: a list of lists, where each item in the list has the same number of elements as I have columns
-				 * Also, the data types should match those that I were declared in my "addColumn" function (I can't change funciton names, can I?) calls.
+				 * The data types should match those that I were declared in my "addColumn" function calls.
 				 */
 				SecondHolderOfCharts.addRows([['Somali', 1405], ['Iraqi', 167], ['Syrian', 20], ['Sudani', 12], ['Irani', 11]]);
 
-				/*The customization variable is an object, which includes some customization applied to the graphic;
-				 * We will need to add to this extensively to make visualizations we actually want to publish.
+				/*I'm using the same customization variable I used in the first graphic because it is easier;
 				 * We can add or subtract from here depending on how we want the chart to be rendered, e.g. width, height
 				 */
 				var customization = {
@@ -109,6 +107,7 @@
 	<body>
 		<div class="container_fluid">
 
+			<!--The columns need to add up to 12, so there are 6 here-->
 			<div class="row">
 				<div class="col-md-6">
 					<!--
@@ -116,6 +115,7 @@
 					-->
 					<div id="HolderOfCharts"></div>
 				</div>
+				<!-- The other 6 columns are here-->
 				<div class="col-md-6">
 					<!--
 					This is where my second chart will appear.
