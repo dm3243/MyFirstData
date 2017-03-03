@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<title>My Refugee Story Collection</title>
+		<!-- Reference for including a CSS stylesheet
+			https://www.w3schools.com/html/html_css.asp
+		-->
+		<link rel="stylesheet" href="styles_old.css"/>
+		<!-- Script example loaded from https://developers.google.com/chart/interactive/docs/quick_start-->
+		<!-- Load the JavaScript code from the Google Visualizations Library
+		-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    
+    <script type="text/javascript">
+      // Here I am trying out a new commenting style
+      // And, I am loading the Visualization API and the corechart package from it.
+      google.charts.load('current', {'packages':['corechart']});
+      /*When google calls back with the contents of the "corechart" package execute the "DrawMyChart" function
+       * Keeping the comment above the way it is b/c it is easy to understand ^^ for reference
+       */
+      google.charts.setOnLoadCallback(DrawMyChart);
+      /*This is the DrawMyChart function
+       * It draws a chart on the page
+       */
+      function DrawMyChart() {
+        // Call on the DataTable to  to make a new DataTable type
+        var HolderOfTheChart = new google.visualization.DataTable();
+        /*Add a column of type string, labeled "People Origin"*/
+        HolderOfTheChart.addColumn('string', 'People Origin');
+        /*Add a column of type number, labeled "People"*/
+        HolderOfTheChart.addColumn('number', 'People');
+        /*My rows must be an array of arrays, or in other words: a list of lists, where each item in the list has the same number of elements as I have columns
+         * Also, the data types should match those that I were declared in my "addColumn" function (I can't change funciton names, can I?) calls.
+         */
+        HolderOfTheChart.addRows([
+          ['Somalis', 1405],
+          ['Syrians', 20],
+          ['Iranis', 11],
+          ['Iraqis', 167],
+          ['Sudanis', 12]
+        ]);
+        /*The customization variable is an object, which includes some customization applied to the graphic; 
+         * We will need to add to this extensively to make visualizations we actually want to publish.
+         * We can add or subtract from here depending on how we want the chart to be rendered, e.g. width, height
+         */
+        var customization = {'title':'Population Breakdown of Refugees in Minnesota by Country of Origin',
+                       'width':500,
+                       'height':300};
+        /*Creating a variable: "Chart", in which I am storing the results of calling the bar chart. 
+         * I must apply the 'HolderOfTheChart' variable as a unique ID in order to get the chart when called in the id of a DIV later.
+         */
+        var ThisIsMyChart = new google.visualization.ColumnChart(document.getElementById('HolderOfTheChart'));
+        
+        /*setting the parameters on the chart.draw, taking from the HolderOfTheChart variable and the customization varible too.*/
+        ThisIsMyChart.draw(HolderOfTheChart, customization);
+      }
+     </script>
+		
+	</head>
+	<body>
+		
+<!-- 
+		This is where my bar chart will appear.
+		-->
+		<div id="HolderOfTheChart"></div>
+		
+		<div>
+			<div class="ArticleTitle">
+				<a href="https://www.nytimes.com/interactive/2015/09/15/world/europe/migrant-borders-europe.html?_r=0"> Closing the Back Door to Europe </a>
+			</div>
+			<div>
+				> <img src="https://static01.nyt.com/newsgraphics/2015/09/14/migrants-borders/a127a650a0ea71d80095e5de196dc181e238e753/top_map-700.jpg"/>
+			</div>
+			<div class="ArticleTitle">
+				This is the stuff we've been working on in inserting images
+			</div>
+		</div>
+		<script type="text/javascript" src="scripts.js"> </script>
+	</body>
+</html>
