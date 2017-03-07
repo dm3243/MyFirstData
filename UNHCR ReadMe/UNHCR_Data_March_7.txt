@@ -1,0 +1,19 @@
+Go to 
+
+http://www.unhcr.org/en-us/global-trends-2015.html
+
+And download the 2015 Global Trends Annex Tables (.zip)
+
+Expand the .zip 
+
+Open up Tab 1 and select the first two columns from row 5-24 (Afghanistan-Benin)
+
+Need to convert data into an array of arrays. E.g.:
+
+[
+[‘countryName’, value],
+[‘countryName’, value],
+[‘countryName’, value],
+[‘countryName’, value],
+]
+
