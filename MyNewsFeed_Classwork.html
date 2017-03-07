@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<h3>My Refugee Story Collection</h3>
+		<!-- Reference for including a CSS stylesheet
+		https://www.w3schools.com/html/html_css.asp
+		-->
+
+		<link rel="stylesheet" href="styles.css"/>
+		<!-- Script example loaded from https://developers.google.com/chart/interactive/docs/quick_start-->
+		<!-- Load the JavaScript code from the Google Visualizations Library
+		-->
+
+		<!-- This is applying bootstrap. Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript" src="data.js"></script>
+		<script type="text/javascript" src="chart_scripts.js"></script>
+	</head>
+	<body>
+		<!--adding a class as a container that is the full-length for alignment of page-->
+		<div class="container_fluid">
+
+			<!--The columns need to add up to 12, so there are 6 here-->
+			<div class="row">
+				<div class="col-md-6">
+					<!--
+					This is where my bar chart will appear.
+					-->
+					<div id="HolderOfCharts"></div>
+				</div>
+				<!-- The other 6 columns are here-->
+				<div class="col-md-6">
+					<!--
+					This is where my second chart will appear.
+					-->
+					<div id="SecondHolderOfCharts1"></div>
+				</div>
+			</div>
+
+			<div>
+				<div class="ArticleTitle">
+					<a href="https://www.nytimes.com/interactive/2015/09/15/world/europe/migrant-borders-europe.html?_r=0"> Closing the Back Door to Europe </a>
+				</div>
+				<div>
+					<img src="https://static01.nyt.com/newsgraphics/2015/09/14/migrants-borders/a127a650a0ea71d80095e5de196dc181e238e753/top_map-700.jpg"/>
+				</div>
+				<div>
+					The refugee route into Europe through the Balkans
+				</div>
+			</div>
+			<script type="text/javascript" src="scripts.js"></script>
+		</div>
+	</body>
+</html>
+
